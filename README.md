@@ -1,2 +1,2 @@
 # backtracking
-backtracking in java resources
+resources for backtracking in Java
