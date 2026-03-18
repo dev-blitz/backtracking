@@ -13,7 +13,7 @@ package com.blitz.backtracking.recursions;
  * </p>
  * @note Space Complexity: O(n) due to temporary arrays used 
  * during the merge process.
- * @author blitz (abhinab.duttagupta@gmail.com)
+ * @author blitz 
  */
 public class MergeSortImpl {
 
@@ -25,9 +25,8 @@ public class MergeSortImpl {
   public static int[] sort(int[] array) {
     if (array == null) 
       throw new IllegalArgumentException("array cannot be empty");
-    if (array.length == 0 || array.length == 1) {
+    if (array.length == 0 || array.length == 1)
       return array; 
-    }
     return sort(array, 0, array.length - 1);
   }
 
