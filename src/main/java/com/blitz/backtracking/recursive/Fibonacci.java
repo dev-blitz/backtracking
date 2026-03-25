@@ -1,4 +1,4 @@
-package com.blitz.backtracking.without_recursion;
+package com.blitz.backtracking.recursive;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -11,8 +11,8 @@ public class Fibonacci {
   
   /**
    * calculates the fibonacci without recursion;
-   * @param int num number whose fibonacci value we want to calculate
-   * @return int the integer fibonacci value
+   * @param num number whose fibonacci value we want to calculate
+   * @return int fibonacci value
    */
   public static int fibonacci(int num) {
     int[] arr = new int[num + 1];
@@ -32,7 +32,7 @@ public class Fibonacci {
   
   /**
    * un-optimised fibonacci implementation
-   * @param int num whose fibonacci we want to calculate
+   * @param num whose fibonacci we want to calculate
    * @return int fibonnaci value of the number
    */
   private static int fibRecUnOpt(int num) {
@@ -43,7 +43,7 @@ public class Fibonacci {
   
   /**
    * optimised recursive fibonnaci implementation
-   * @param int num whose value we want to calculate
+   * @param num whose value we want to calculate
    * @return int fibonnaci value
    */
   private static int fibRecOpt(int num) {
@@ -52,8 +52,8 @@ public class Fibonacci {
 
   /**
    * overloaded optimised fibonnaci implementation for reference
-   * @param int num whose fibonnaci value we want to calculate
-   * @param Map<Integer, Integer> map to retain the values calculated
+   * @param num whose fibonnaci value we want to calculate
+   * @param map to retain the values calculated
    * @return int fibonnaci value of the number
    */
   private static int fibRecOpt(int num, Map<Integer, Integer> map) {

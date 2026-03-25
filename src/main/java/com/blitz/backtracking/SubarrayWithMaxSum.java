@@ -1,6 +1,6 @@
 package com.blitz.backtracking;
 
-public class MaxSumInUnsortedArray {
+public class SubarrayWithMaxSum {
   public static int maxSumInUnsortedArray(int[] arr) {
     int current = arr[0];
     int max = arr[0];
