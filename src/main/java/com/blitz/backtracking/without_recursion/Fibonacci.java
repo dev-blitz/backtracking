@@ -4,16 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * this class provides the implementation of Fibonacci sequence
- * without using recursions
+ * this class provides the implementation of Fibonacci sequence without using recursions
  * @author blitz
  */
 public class Fibonacci {
   
   /**
    * calculates the fibonacci without recursion;
-   * @param int num number whose fibonacci value 
-   * we want to calculate
+   * @param int num number whose fibonacci value we want to calculate
    * @return int the integer fibonacci value
    */
   public static int fibonacci(int num) {
