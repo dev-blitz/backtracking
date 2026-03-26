@@ -1,4 +1,4 @@
-package com.blitz.backtracking.recursive;
+package com.blitz.backtracking.rec_iter;
 
 import java.util.HashMap;
 import java.util.Map;
