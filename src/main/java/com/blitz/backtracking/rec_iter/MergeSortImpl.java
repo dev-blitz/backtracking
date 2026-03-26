@@ -1,10 +1,13 @@
-package com.blitz.backtracking.recursive;
+package com.blitz.backtracking.rec_iter;
 
 import java.util.Arrays;
 
 public class MergeSortImpl {
   /**
    * merge-sort implementation with recursion
+   * <p>
+   *    time-complexity: O(n * log(n))
+   * </p>
    * @param arr array that we want to sort
    * @return sorted-array
    */
@@ -13,6 +16,10 @@ public class MergeSortImpl {
   }
   
   /**
+   * overloaded recursive method call
+   * <p>
+   *    time-complexity: O(n * log(n))
+   * </p>
    * @param arr array that we want to sort
    * @param left left-index of the array
    * @param right right-index of the array
