@@ -1,7 +1,7 @@
 package com.blitz.backtracking.recursive;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * this class has the implementations of the permutations in recursive and iterative approaches
@@ -10,14 +10,44 @@ import java.util.List;
  * @author blitz
  */
 public class Permutations {
- 
+
   /**
-   * recursive call to compute all the permutations of the string as a <em>List</em>
-   * @param str whose permutations we want to compute
-   * @return List<String> all the permutations of the string
+   * <strong><em>iterative</em></strong> implementation of permutation
+   * @param str string whose permutations we want to compute
+   * @return Set<String> all the permutations as a set
    */
-  public static List<String> permute(String str) {
-    return permute(str, 0, str.length() - 1, new ArrayList<String>());
+  public static Set<String> permuteIter(String str) {
+    return permuteIter(str, 0, str.length() - 1, new HashSet<String>());
+  }
+
+  /**
+   * overloaded private method to compute the permutations in an <em>iterative</em> approach
+   * @param str
+   * @param left left-index
+   * @param right right-index
+   * @param set set to retain the permutations computed
+   * @return Set<String> set containing all the permutations
+   */
+  private static Set<String> permuteIter(String str, int left, int right, Set<String> set) {
+    if (left == right) {
+      set.add(str);
+    } else if (left < right) {
+      for (int i = left; i <= right; i++) {
+        str = swap(str, left, right);
+
+        str = swap(str, left, right);
+      }
+    }
+    return set;
+  }
+
+  /**
+   * recursive call to compute all the permutations of the string as a <em>Set</em>
+   * @param str whose permutations we want to compute
+   * @return Set<String> all the permutations of the string
+   */
+  public static Set<String> permute(String str) {
+    return permute(str, 0, str.length() - 1, new HashSet<String>());
   }
 
   /**
@@ -25,22 +55,23 @@ public class Permutations {
    * @param str whose permutations we want to compute
    * @param left left-index from where we want to start permutating the values
    * @param right right-index from where we want to start permutating the values
-   * @param list list which will retain the values during each permutation
-   * @return List<String> list of all the permutations of the string
+   * @param set set which will retain the values during each permutation
+   * @return Set<String> set of all the permutations of the string
    */
-  private static List<String> permute(String str, int left, int right, List<String> list) {
-    if (left <= right) {
+  private static Set<String> permute(String str, int left, int right, Set<String> set) {
+    if (left == right) {
+      set.add(str);
+    } else if (left < right) {
       for (int i = left; i <= right; i++) {
         str = swap(str, left, i);
-        permute(str, left + 1, right, list);
+        permute(str, left + 1, right, set);
         str = swap(str, left, i);
       }
     }
-    return list;
+    return set;
   }
 
   /**
-   * method to swap the characters of a string at the indices provided
    * the function will swap the character at the left-index with the right-index
    * @param str string where we want to swap the characters
    * @param left left-index 
@@ -53,5 +84,10 @@ public class Permutations {
     array[left] = array[right];
     array[right] = temp;
     return String.valueOf(array);
+  }
+
+  public static void main(String[] args) {
+    String str = "ABC";
+    System.out.println("permutations of " + str + " are: " + permute(str));
   }
 }
