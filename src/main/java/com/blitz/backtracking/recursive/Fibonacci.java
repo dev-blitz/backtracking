@@ -1,5 +1,6 @@
 package com.blitz.backtracking.recursive;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,21 +11,50 @@ import java.util.Map;
 public class Fibonacci {
   
   /**
-   * calculates the fibonacci without recursion;
+   * calculates the fibonacci without recursion
+   * <p>
+   *    time-complexity: O(n)<br>
+   *    optimised space-complexity: O(1)
+   * </p>
    * @param num number whose fibonacci value we want to calculate
    * @return int fibonacci value
    */
-  public static int fibonacci(int num) {
-    int[] arr = new int[num + 1];
+  public static int fibIteOpt(int num) {
+    int first = 0;
+    int second = 1;
+    for (int i = 2; i <= num; i++) {
+      int fibonacci = first + second;
+      first = second;
+      second = fibonacci;
+    }
+    return second;
+  }
+
+  /**
+   * calculates the fibonacci without recursion;
+   * <p>
+   *    time-complexity: O(n)<br>
+   *    space-complexity: O(n)
+   * </p>
+   * @param num number whose fibonacci value we want to calculate
+   * @return int fibonacci value
+   */
+  public static void fibIteUnOpt(int num) {
+    int[] arr = new int[num];
     arr[0] = 0;
     arr[1] = 1;
     for (int i = 2; i <= num; i++)
       arr[i] = arr[i - 1] + arr[i - 2];
-    return arr[arr.length - 1];
+    System.out.println("fibonacci-sequence: " + Arrays.toString(arr));
   }
+
   
   /**
    * un-optimised fibonacci implementation
+   * <p>
+   *    time-complexity: O(n^2)<br>
+   *    space-complexity: O(n^2)
+   * </p>
    * @param num whose fibonacci we want to calculate
    * @return int fibonnaci value of the number
    */
@@ -36,6 +66,10 @@ public class Fibonacci {
   
   /**
    * optimised recursive fibonnaci implementation
+   * <p>
+   *    time-complexity: O(n^2)<br>
+   *    space-complexity: O(n^2)
+   * </p>
    * @param num whose value we want to calculate
    * @return int fibonnaci value
    */
@@ -45,6 +79,10 @@ public class Fibonacci {
 
   /**
    * overloaded optimised fibonnaci implementation for reference
+   * <p>
+   *    time-complexity: O(n^2)<br>
+   *    space-complexity: O(n^2)
+   * </p>
    * @param num whose fibonnaci value we want to calculate
    * @param map to retain the values calculated
    * @return int fibonnaci value of the number
@@ -61,11 +99,11 @@ public class Fibonacci {
 
   public static void main(String[] args) {
     int num = 5;
-    System.out.println("fibonacci of " + num + ": " + fibonacci(num));
+    System.out.println("fibonacci of " + num + ": " + fibIteOpt(num));
     num = 6;
-    System.out.println("fibonacci of " + num + ": " + fibonacci(num));
+    System.out.println("fibonacci of " + num + ": " + fibIteOpt(num));
     num = 21;
-    System.out.println("fibonacci of " + num + ": " + fibonacci(num));
+    System.out.println("fibonacci of " + num + ": " + fibIteOpt(num));
     System.out.println("OPTIMISED-RECUSION");
     num = 5;
     System.out.println("fibonacci of " + num + ": " +fibRecOpt(num));
