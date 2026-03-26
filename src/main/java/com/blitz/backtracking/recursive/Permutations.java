@@ -6,7 +6,6 @@ import java.util.Set;
 /**
  * this class has the implementations of the permutations in recursive and iterative approaches
  * along with class has some most common and basic permutation problems
- *
  * @author blitz
  */
 public class Permutations {
