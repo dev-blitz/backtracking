@@ -1,4 +1,4 @@
-package com.blitz.backtracking.recursive;
+package com.blitz.backtracking.rec_iter;
 
 /**
  * this class is calculates the factorial without using recursion
