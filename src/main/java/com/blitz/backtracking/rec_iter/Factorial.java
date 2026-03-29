@@ -1,7 +1,7 @@
 package com.blitz.backtracking.rec_iter;
 
 /**
- * this class is calculates the factorial without using recursion
+ * this class calculates the factorial without using recursion
  * @author = blitz
  */
 public class Factorial {
@@ -10,8 +10,8 @@ public class Factorial {
    * factorial implementation without recursion
    * iterates by subtracting 1
    * multiplies and calulates the factorial in each iteration
-   * @param  num number whose factorial we want to calculate
-   * @return int factorial value of the number
+   * @param num number whose factorial we want to calculate
+   * @return factorial value of the number
    */
   public static int factorial(int num) {
     int factorial = 1;
@@ -23,7 +23,7 @@ public class Factorial {
   /**
    * factorial implementation with recursion
    * @param num whse factorial we want to calculate
-   * @return int factorial of the number
+   * @return factorial of the number
    */
   private static int factRecOpt(int num) {
     if (num == 0 || num == 1) return 1;
