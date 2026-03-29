@@ -17,7 +17,7 @@ public class Fibonacci {
    *    optimised space-complexity: O(1)
    * </p>
    * @param num number whose fibonacci value we want to calculate
-   * @return int fibonacci value
+   * @return fibonacci value
    */
   public static int fibIteOpt(int num) {
     int first = 0;
@@ -37,7 +37,7 @@ public class Fibonacci {
    *    space-complexity: O(n)
    * </p>
    * @param num number whose fibonacci value we want to calculate
-   * @return int fibonacci value
+   * @return fibonacci value
    */
   public static void fibIteUnOpt(int num) {
     int[] arr = new int[num];
@@ -56,7 +56,7 @@ public class Fibonacci {
    *    space-complexity: O(n^2)
    * </p>
    * @param num whose fibonacci we want to calculate
-   * @return int fibonnaci value of the number
+   * @return fibonnaci value of the number
    */
   private static int fibRecUnOpt(int num) {
     if (num == 0 || num == 1)
@@ -71,7 +71,7 @@ public class Fibonacci {
    *    space-complexity: O(n^2)
    * </p>
    * @param num whose value we want to calculate
-   * @return int fibonnaci value
+   * @return fibonnaci value
    */
   private static int fibRecOpt(int num) {
     return fibRecOpt(num, new HashMap<Integer, Integer>());
@@ -85,7 +85,7 @@ public class Fibonacci {
    * </p>
    * @param num whose fibonnaci value we want to calculate
    * @param map to retain the values calculated
-   * @return int fibonnaci value of the number
+   * @return fibonnaci value of the number
    */
   private static int fibRecOpt(int num, Map<Integer, Integer> map) {
     if (map.containsKey(num))

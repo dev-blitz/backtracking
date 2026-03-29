@@ -13,7 +13,7 @@ public class Permutations {
   /**
    * <strong><em>iterative</em></strong> implementation of permutation
    * @param str string whose permutations we want to compute
-   * @return Set<String> all the permutations as a set
+   * @return all the permutations as a set
    */
   public static Set<String> permuteIter(String str) {
     return permuteIter(str, 0, str.length() - 1, new HashSet<String>());
@@ -25,7 +25,7 @@ public class Permutations {
    * @param left left-index
    * @param right right-index
    * @param set set to retain the permutations computed
-   * @return Set<String> set containing all the permutations
+   * @return set containing all the permutations
    */
   private static Set<String> permuteIter(String str, int left, int right, Set<String> set) {
     if (left == right) {
@@ -43,7 +43,7 @@ public class Permutations {
   /**
    * recursive call to compute all the permutations of the string as a <em>Set</em>
    * @param str whose permutations we want to compute
-   * @return Set<String> all the permutations of the string
+   * @return all the permutations of the string
    */
   public static Set<String> permute(String str) {
     return permute(str, 0, str.length() - 1, new HashSet<String>());
@@ -55,7 +55,7 @@ public class Permutations {
    * @param left left-index from where we want to start permutating the values
    * @param right right-index from where we want to start permutating the values
    * @param set set which will retain the values during each permutation
-   * @return Set<String> set of all the permutations of the string
+   * @return set of all the permutations of the string
    */
   private static Set<String> permute(String str, int left, int right, Set<String> set) {
     if (left == right) {
@@ -75,7 +75,7 @@ public class Permutations {
    * @param str string where we want to swap the characters
    * @param left left-index 
    * @param right right-index
-   * @return String string after returning
+   * @return after swapping 
    */
   private static String swap(String str, int left, int right) {
     char[] array = str.toCharArray();
